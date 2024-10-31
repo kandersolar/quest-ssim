@@ -1,18 +1,12 @@
 
 import faulthandler
-faulthandler.enable()
+faulthandler.enable()  # just to show a bit of info about the segfault
 
-
-print("helics", flush=True)
 from helics import (
     HelicsFederate,
     HelicsValueFederate,
-    helics_time_maxtime,
-    helicsCreateValueFederateFromConfig
+#    helics_time_maxtime,
+#    helicsCreateValueFederateFromConfig
 )
 
-print("matplotlib", flush=True)
 import matplotlib.pyplot as plt
-
-print("ssim.federates.timing", flush=True)
-from ssim.federates import timing
