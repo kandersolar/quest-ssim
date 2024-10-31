@@ -16,5 +16,11 @@ jobs:
       run: |
         pip install .
         pip install -U matplotlib
+    - name: run command
+      run: python -c "import matplotlib"
+    - name: run command
+      run: python -c "import matplotlib; import helics"
+    - name: run command
+      run: python -c "import helics; import matplotlib"
     - name: run reproduction script
       run: python reproduce_segfault.py
