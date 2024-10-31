@@ -16,9 +16,16 @@ jobs:
       run: |
         pip install .
         pip install -U matplotlib
-    - name: run command
-      run: python -c "import matplotlib.pyplot as plt; from helics import HelicsFederate"
-    - name: run command
-      run: python -c "from helics import HelicsFederate; import matplotlib.pyplot as plt"
-    - name: run reproduction script
-      run: python reproduce_segfault.py
+        pip install sphinx
+    - name: weird matplotlib fix
+      run: python -c "import matplotlib.pyplot as plt"
+    - name: Build HTML
+      run: sphinx-build -vvv -b html docs _build
+      env:
+        MPLBACKEND: agg
+    - name: Deply to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/head/master'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: _build
