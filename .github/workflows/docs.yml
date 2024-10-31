@@ -19,8 +19,8 @@ jobs:
     - name: run command
       run: python -c "import matplotlib.pyplot as plt"
     - name: run command
-      run: python -c "import matplotlib.pyplot as plt; import helics"
+      run: python -c "import matplotlib.pyplot as plt; from helics import HelicsFederate"
     - name: run command
-      run: python -c "import helics; import matplotlib.pyplot as plt"
+      run: python -c "from helics import HelicsFederate; import matplotlib.pyplot as plt"
     - name: run reproduction script
       run: python reproduce_segfault.py
