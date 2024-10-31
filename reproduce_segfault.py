@@ -4,7 +4,7 @@ faulthandler.enable()  # just to show a bit of info about the segfault
 
 from helics import (
     HelicsFederate,
-    HelicsValueFederate,
+#    HelicsValueFederate,
 #    helics_time_maxtime,
 #    helicsCreateValueFederateFromConfig
 )
