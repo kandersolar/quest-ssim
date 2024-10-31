@@ -17,6 +17,10 @@ jobs:
         pip install .
         pip install -U matplotlib
         pip install sphinx
+    - name: Try importing ssim
+      run: python -c "import ssim"
+    - name: Try importing ssim.federates.logger
+      run: python -c "import ssim.federates.logger"
     - name: Build HTML
       run: sphinx-build -vvv -b html docs _build
       env:
