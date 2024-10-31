@@ -17,10 +17,6 @@ jobs:
         pip install .
         pip install -U matplotlib
     - name: run command
-      run: python -c "import matplotlib.pyplot as plt"
-    - name: run command
-      run: python -c "import matplotlib.pyplot as plt; from helics import HelicsFederate"
-    - name: run command
       run: python -c "from helics import HelicsFederate; import matplotlib.pyplot as plt"
     - name: run reproduction script
       run: python reproduce_segfault.py
