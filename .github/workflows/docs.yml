@@ -17,6 +17,8 @@ jobs:
         pip install .
         pip install -U matplotlib
         pip install sphinx
+    - name: run reproduction script
+      run: python reproduce_segfault.py
     - name: Try importing ssim
       run: python -c "import ssim"
     - name: Try importing ssim.federates.logger
